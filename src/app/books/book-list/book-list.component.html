@@ -1,0 +1,32 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Cover</th>
+    <th>Book-Title</th>
+    <th>Author</th>
+    <th>ISBN</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books;let i = index">
+    <td>
+      <img src="http://covers.openlibrary.org/b/isbn/{{book.isbn}}-S.jpg" />
+    </td>
+    <td>
+      {{i + 1}}
+    </td>
+    <td>
+      <a [routerLink]="['detail', book.isbn]">
+        {{book.title}}
+      </a>
+    </td>
+    <td>
+      {{book.author}}
+    </td>
+    <td>
+      {{book.isbn}}
+    </td>
+  </tr>
+  </tbody>
+</table>
